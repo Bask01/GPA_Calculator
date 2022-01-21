@@ -1,0 +1,51 @@
+<!-- 
+/**
+ * The index page
+ * to navigate to related pages.
+ * @author Kubra Bas
+ */ 
+ -->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><!--import thymeleaf namespace into the page-->
+<head>
+<meta charset="ISO-8859-1">
+<title>Main Menu</title>
+
+<!-- Call css file for page styling -->
+<link rel="stylesheet" href="../static/css/main.css"
+	th:href="@{/css/main.css}">
+</head>
+<body>
+
+	<!-- This page is designed in 5 parts: header, navigation, main and footer -->
+	
+	<!-- header part -->
+	<header>
+		<hr><!-- Draw a horizontal line pink color and 2px height-->
+		<h1>Grade Calculators</h1><!-- Print header -->
+		<hr><!-- Draw a horizontal line pink color and 5px height-->
+	</header>
+
+   <!--Navigation part, contains 4 buttons  -->
+ 	<nav>
+		 <a class="button" href="/evalc">Evaluation Calculator</a>
+		 <a class="button" href="">GPA Calculator</a>
+		 <a class="button" href="">Add Course</a>
+	</nav>
+	
+	<!-- main part, a welcome message is displayed-->
+	<main>
+		<div class="index">
+		<p>Welcome to the Grade Calculator App. Tap the one of the buttons above to continue!</p>
+		</div>
+	</main>
+	
+	<!-- footer part; prints @2021 Sheridan College-->
+	<footer>
+	     <h3 id="copyright">&copy; 2021 Sheridan College</h3>
+	</footer>
+     
+</body>
+</html>

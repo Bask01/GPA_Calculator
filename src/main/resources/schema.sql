@@ -1,0 +1,18 @@
+CREATE TABLE courses (
+	code VARCHAR(9) NOT NULL PRIMARY KEY ,
+	title VARCHAR(255) NOT NULL,
+	credits DECIMAL(3,1) NOT NULL,
+	complete BOOLEAN DEFAULT 0,
+	term INT,
+	finalgrade DECIMAL(5,2)
+);
+
+CREATE TABLE EVALUATIONS (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(255) NOT NULL,
+	course VARCHAR(9) NOT NULL,
+	grade DECIMAL(5,2),
+	max DECIMAL(5,2),
+	weight DECIMAL(5,2),
+	duedate DATE
+);

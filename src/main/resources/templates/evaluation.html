@@ -1,0 +1,93 @@
+<!-- 
+/**
+ * The evaluation page, provides a form for the user to enter
+ * the required fields to calculate the grade.
+ * @author Kubra Bas
+ */ 
+ -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><!--thymeleaf namespace-->
+<head>
+<meta charset="ISO-8859-1">
+<title>Evaluation Calculator</title>
+<!-- Call the css file for page styling -->
+<link rel="stylesheet" href="../static/css/main.css"
+	th:href="@{/css/main.css}">
+</head>
+
+<body>
+
+   <!-- This page is designed in 4 parts: header, navigation, main and footer -->
+   
+   <!-- header part -->
+	<header>
+		<hr><!-- Draw a horizontal line-->
+		<h1>Evaluation Calculator</h1><!-- Print header -->
+		<hr><!-- Draw a horizontal line pink color and 5px height-->
+	</header>
+
+	<!--Navigation part, contains 4 buttons  -->
+ 	<nav>
+		 <a class="button" href="/">Main Menu</a>
+		 <a class="button" href="/evalc">Evaluation Calculator</a>
+		 <a class="button" href="">GPA Calculator</a>
+		 <a class="button" href="">Add Course</a>
+	</nav>
+	
+	
+	<!--Navigation part, provides a form, uses post method -->
+	<main>	
+	
+   		<form name="myform" action="/evals" method="post" th:object="${evaluation}">
+   		
+   		  <input type="hidden" name="id" th:field="*{id}"> 
+   		
+   		<!--title-->
+   		<p><label for="title">Evaluation Title:
+   			<input type="text" id="title" name="title" th:field="*{title}" required></label></p>
+		
+		<!-- test if course list is empty, if so display a message -->
+		<div th:if="${#lists.isEmpty(session.courses)}">
+		<label for="course">Select Course:		
+				<select id="course" name="course" th:field="*{course}">
+					<option th:value = "TBD" th:text="'Currently No course available!'">Select Course</option>
+				</select>				
+		</label>	
+	</div>
+
+	<div th:unless="${#lists.isEmpty(session.courses)}"><!-- test if session.courses exists, if exists test if it contains any item -->
+		<label for="course">Select a Course:			
+				<select id="course" name="course">
+					<option th:each="t : ${session.courses}" th:value="${t.code}"
+					value="PROG10082" th:text="${t.title}">course name</option>
+				</select>						
+		</label>	
+	</div>	
+					
+   			
+   		<!--Grade-->	
+   		<p><label for="grade">Mark:
+   			<input type="number" id="grade" name="grade" min="0"  max="100" th:field="*{grade}" required></label>		
+   		<!--OutOf -->
+   		<label for="max">Out Of:
+   			<input type="number"  id="max" name="max" min="1" max="100" th:field="*{max}" required></label></p>
+   		<!--Weighting-->
+   		<p><label for=weight>Weighting:
+   			<input type="number" id="weight" name="weight" min="1" th:field="*{weight}" required></label></p>
+   		<!--Due Date-->
+   		<p><label for="date">Due Date
+   			<input type="date" id="date" name="date" th:field="*{dueDate}" required></label></p>
+   		<!--submit button  -->	
+   		<p><input type="submit" id="submit" name="submit"></p>
+
+   		</form>
+   		
+   </main>
+   
+   <!-- footer part; prints @2021 Sheridan College-->
+   	<footer>
+	     <h3 id="copyright">&copy; 2021 Sheridan College</h3>
+	</footer>
+
+</body>
+</html>

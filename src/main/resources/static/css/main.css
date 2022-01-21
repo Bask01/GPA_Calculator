@@ -1,0 +1,138 @@
+@charset "ISO-8859-1";
+
+/**
+ * Styling page
+ * @author Kubra Bas
+ */ 
+
+ 
+  body {
+        background-color:#BAF9F9;
+		min-width: 500px;
+		min-height: 100%;
+  }
+  
+  /*style for horizontal line  */
+  hr {
+  		border-top: 3px solid pink ;
+  		width:"1000"; /*set the width tp 1000px  */
+  }
+   
+   /*style for header and footer */         
+   header, footer{
+   padding: 1px 0px; /*padding for top and bottom ~ left and right*/
+   background-color:purple;
+   text-align:center;
+   color: white;
+   margin: 70px 350px 50px 350px; /*set the margin top left bottom right  */
+   border: 2px solid white;
+   min-width: 500px;
+   min-height: 100%;
+   }
+   
+  /*style for nav bar  */	
+   nav{
+    text-align: center;
+    min-width: 500px;
+	min-height: 100%;
+    
+   }
+   /*style for main part*/
+   main{
+   		width: 35%;
+   	    font-family:sans;
+   		margin: 30px auto;
+   		background-color:rgb(192, 192, 192);
+   		
+   		padding: 40px;
+   		border: 1px solid black;
+   		border-width: 4px;
+   		box-shadow: 8px 8px 20px #333;
+   		
+   		
+   }
+   
+   label {
+   		font-weight : bold;
+   }
+   
+   label span {
+   	   font-weight : normal;
+   }
+   
+   /*style for result page-output */
+   .result {
+   	    font-size:35px;
+   		padding: 6px;
+   		border: 2px dashed #c0c0c0;
+   		border-width: 2px;
+   		text-align:left;
+   }
+   
+   /*style for index page welcome message */
+   .index {
+        font-size:25px;
+   		padding: 6px;
+   		border: 2px dashed #c0c0c0;
+   		border-width: 2px;
+   		text-align:left;
+   }
+   
+  
+  /*style for the form*/ 
+  form{
+  			font-size:25px;
+  			font-family:Arial;
+  }
+
+  /*style buttons and the submit button*/ 
+  .button, input[type="submit"] {
+		font-size: 20px;  
+        background-color: pink;
+        padding:5px 10px;
+        text-transform: uppercase;
+        text-decoration: none;   
+        font-weight: bold;
+        border:grey 4px solid;
+        border-radius: 6px;   
+  }
+  /*style for button hover, change the background color to purple,the text color to white*/ 
+   .button:hover, input[type="submit"]:hover {
+         background-color: purple;
+         color:white;
+   }
+   
+	/*style for button:active. When button clicked change the position left and top 3px*/ 
+   .button:active, input[type="submit"]:active{
+
+         position: relative; /*let the button element move relatively to its original position  */
+         left:3px;
+         top:3px;
+    }
+    
+    /*style for inputs type: text, date and number*/ 
+    input[type="text"], input[type="date"], select {
+    	height:25px;
+    	width: 310px;
+    	font-size:20px;
+    }
+    
+     input[type="number"] {
+     	height:25px;
+    	width: 125px;
+    	font-size:20px;
+    }
+    table, th, td {
+    	
+    	padding:7px;
+    	border: 2px solid purple;
+    	font-size:20px;
+    	text-align: center;
+    	font-weight:bold;
+    }
+	
+	.error {
+		color: red;
+	}
+ 
+            

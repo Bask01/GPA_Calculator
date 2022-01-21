@@ -1,0 +1,65 @@
+<!-- 
+/**
+ * The result page. Displays evaluation results
+ * @author Kubra Bas
+ */ 
+ -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- thymeleaf namespace -->
+<head>
+<meta charset="ISO-8859-1">
+<title>Evaluations</title>
+
+<!-- Call css file for page styling -->
+<link rel="stylesheet" href="../static/css/main.css"
+	th:href="@{/css/main.css}">
+</head>
+
+<body>
+
+
+		
+	<!-- header part -->
+	<header>
+		
+		<hr><!-- Draw a horizontal line-->
+		<h1>Evaluations</h1><!-- Print header -->
+		<hr><!-- Draw a horizontal line -->
+	</header><!--End of header-->
+	
+	<!--Navigation part, contains 4 buttons  -->
+	<nav>
+		 <a class="button" href="/">Main Menu</a>
+		 <a class="button" href="/evalc">Evaluation Calculator</a>
+		 <a class="button" href="">GPA Calculator</a>
+		 <a class="button" href="">Add Course</a>
+	</nav>
+
+    
+    <!-- main part -->
+    
+	<main>	
+ 		
+<!-- 		<table>
+
+			<tr><th>Due Date</th><th>Course</th><th>Title</th><th>Grade</th><th>Weight</th><th>Title</th></tr>
+			<tr th:each="e : ${evals}">
+				<td th:text="${e.dueDate}">due date</td>
+				<td th:text ="${e.course}">course</td>
+		    	<td th:text ="${e.title}">title</td>
+		    	<td th:text ="|${#numbers.formatDecimal(e.grade,1,1)} / ${#numbers.formatDecimal(e.max,1,1)}|">grade</td>
+		    	<td th:text ="${#numbers.formatDecimal(e.weight,1,1)}">weight</td>
+		    	<td><a href="#" th:href="|@{/editEvaluation/}${e.id}|">EDIT</a></td>
+			</tr>
+		</table> -->
+				
+		
+	</main><!--End main part-->
+	
+	<!--footer part-->
+	<footer>
+	     <h3 id="copyright">&copy; 2021 Sheridan College</h3><!--print @2021 Sheridan College  -->
+	</footer><!--End of footer  -->
+
+</body>
+</html>
